@@ -9,7 +9,12 @@ const socials = [
     {icon: <FaTwitter/>, path: ""},
 ];
 
-const Social = ({containerStyles, iconStyles}) => {
+interface ISocial {
+    containerStyles: string;
+    iconStyles: string;
+}
+
+const Social = ({containerStyles, iconStyles}: ISocial) => {
     return (
         <div className={containerStyles}>
             {socials.map((item, index) => {

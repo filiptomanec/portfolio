@@ -5,10 +5,17 @@ import * as ScrollAreaPrimitive from "@radix-ui/react-scroll-area";
 
 import {cn} from "@/lib/utils";
 
-const ScrollArea = React.forwardRef(
-    ({className, children, ...props}, ref) => (
+
+interface IScrollArea {
+    className?: string;
+    dir?: "ltr" | "rtl";
+    children: React.ReactNode;
+}
+
+const ScrollArea =
+    ({className, children, dir = "ltr", ...props}: IScrollArea) => (
         <ScrollAreaPrimitive.Root
-            ref={ref}
+            dir={dir}
             className={cn("relative overflow-hidden", className)}
             {...props}
         >
@@ -18,14 +25,18 @@ const ScrollArea = React.forwardRef(
             <ScrollBar/>
             <ScrollAreaPrimitive.Corner/>
         </ScrollAreaPrimitive.Root>
-    )
-);
+    );
 ScrollArea.displayName = ScrollAreaPrimitive.Root.displayName;
 
-const ScrollBar = React.forwardRef(
-    ({className, orientation = "vertical", ...props}, ref) => (
+
+interface IScrollBar extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;
+    orientation?: "vertical" | "horizontal";
+}
+
+const ScrollBar =
+    ({className, orientation = "vertical", ...props}: IScrollBar) => (
         <ScrollAreaPrimitive.ScrollAreaScrollbar
-            ref={ref}
             orientation={orientation}
             className={cn(
                 "flex touch-none select-none transition-colors",
@@ -39,8 +50,7 @@ const ScrollBar = React.forwardRef(
         >
             <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-accent dark:bg-slate-800"/>
         </ScrollAreaPrimitive.ScrollAreaScrollbar>
-    )
-);
+    );
 ScrollBar.displayName = ScrollAreaPrimitive.ScrollAreaScrollbar.displayName;
 
 export {ScrollArea, ScrollBar};

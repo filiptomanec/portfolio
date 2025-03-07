@@ -14,16 +14,19 @@ const SheetClose = SheetPrimitive.Close;
 
 const SheetPortal = SheetPrimitive.Portal;
 
-const SheetOverlay = React.forwardRef(({className, ...props}, ref) => (
+interface ISheetOverlay extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;
+}
+
+const SheetOverlay = ({className, ...props}: ISheetOverlay) => (
     <SheetPrimitive.Overlay
         className={cn(
             "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
             className
         )}
         {...props}
-        ref={ref}
     />
-));
+);
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
@@ -43,12 +46,17 @@ const sheetVariants = cva(
     }
 );
 
-const SheetContent = React.forwardRef(
-    ({side = "right", className, children, ...props}, ref) => (
+
+interface ISheetContent extends React.HTMLAttributes<HTMLDivElement> {
+    side?: "top" | "bottom" | "left" | "right";
+    className?: string;
+}
+
+const SheetContent =
+    ({side = "right", className, children, ...props}: ISheetContent) => (
         <SheetPortal>
             <SheetOverlay/>
             <SheetPrimitive.Content
-                ref={ref}
                 className={cn(sheetVariants({side}), className)}
                 {...props}
             >
@@ -59,11 +67,14 @@ const SheetContent = React.forwardRef(
                 </SheetPrimitive.Close>
             </SheetPrimitive.Content>
         </SheetPortal>
-    )
-);
+    );
 SheetContent.displayName = SheetPrimitive.Content.displayName;
 
-const SheetHeader = ({className, ...props}) => (
+interface ISheetHeader extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;
+}
+
+const SheetHeader = ({className, ...props}: ISheetHeader) => (
     <div
         className={cn(
             "flex flex-col space-y-2 text-center sm:text-left",
@@ -74,7 +85,11 @@ const SheetHeader = ({className, ...props}) => (
 );
 SheetHeader.displayName = "SheetHeader";
 
-const SheetFooter = ({className, ...props}) => (
+interface ISheetFooter extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;
+}
+
+const SheetFooter = ({className, ...props}: ISheetFooter) => (
     <div
         className={cn(
             "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
@@ -85,25 +100,31 @@ const SheetFooter = ({className, ...props}) => (
 );
 SheetFooter.displayName = "SheetFooter";
 
-const SheetTitle = React.forwardRef(({className, ...props}, ref) => (
+interface ISheetTitle extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;
+}
+
+const SheetTitle = ({className, ...props}: ISheetTitle) => (
     <SheetPrimitive.Title
-        ref={ref}
         className={cn(
             "text-lg font-semibold text-slate-950 dark:text-slate-50",
             className
         )}
         {...props}
     />
-));
+);
 SheetTitle.displayName = SheetPrimitive.Title.displayName;
 
-const SheetDescription = React.forwardRef(({className, ...props}, ref) => (
+interface ISheetDescription extends React.HTMLAttributes<HTMLDivElement> {
+    className?: string;
+}
+
+const SheetDescription = ({className, ...props}: ISheetDescription) => (
     <SheetPrimitive.Description
-        ref={ref}
         className={cn("text-sm text-slate-500 dark:text-slate-400", className)}
         {...props}
     />
-));
+);
 SheetDescription.displayName = SheetPrimitive.Description.displayName;
 
 export {

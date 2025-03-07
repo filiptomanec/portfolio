@@ -13,6 +13,7 @@ import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/compo
 import Link from "next/link";
 import Image from "next/image";
 import WorkSliderBtns from "@/components/WorkSliderBtns";
+import type {Swiper as SwiperClass} from "swiper/types";
 
 const projects = [
     {
@@ -53,7 +54,7 @@ const projects = [
 const Work = () => {
     const [project, setProject] = useState(projects[0]);
 
-    const handleSlideChange = (swiper) => {
+    const handleSlideChange = (swiper: SwiperClass) => {
         // get current slide index
         const currentIndex = swiper.activeIndex;
         // update project state based on current slide index
