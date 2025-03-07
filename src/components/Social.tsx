@@ -1,12 +1,10 @@
 import Link from "next/link";
 
-import {FaGithub, FaLinkedinIn, FaTwitter, FaYoutube} from "react-icons/fa";
+import {FaGithub, FaLinkedinIn} from "react-icons/fa";
 
 const socials = [
-    {icon: <FaGithub/>, path: ""},
-    {icon: <FaLinkedinIn/>, path: ""},
-    {icon: <FaYoutube/>, path: ""},
-    {icon: <FaTwitter/>, path: ""},
+    {icon: <FaGithub/>, path: "https://github.com/filiptomanec"},
+    {icon: <FaLinkedinIn/>, path: "https://www.linkedin.com/in/filip-tomanec-568b97173/"},
 ];
 
 interface ISocial {
