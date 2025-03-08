@@ -1,27 +1,30 @@
 "use client";
 
 import CountUp from "react-countup";
-
-const stats = [
-    {
-        num: 12,
-        text: "Years of experience",
-    },
-    {
-        num: 26,
-        text: "Projects completed",
-    },
-    {
-        num: 8,
-        text: "Technologies mastered",
-    },
-    {
-        num: 500,
-        text: "Code commits",
-    },
-];
+import useGithubCommits from "@/hooks/useGithubCommits";
 
 const Stats = () => {
+    const {commits} = useGithubCommits();
+
+    const stats = [
+        {
+            num: getYearsOfExperience("2020-03-01"),
+            text: "Years of experience",
+        },
+        {
+            num: 26,
+            text: "Projects completed",
+        },
+        {
+            num: 8,
+            text: "Technologies mastered",
+        },
+        {
+            num: commits,
+            text: "Code commits",
+        },
+    ];
+
     return (
         <section className="pt-4 pb-12 xl:pt-0 xl:pb-0">
             <div className="container mx-auto">
@@ -53,5 +56,29 @@ const Stats = () => {
         </section>
     );
 };
+
+function getYearsOfExperience(dateString: string) {
+    const startDate = new Date(dateString);
+    const currentDate = new Date();
+
+    let yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
+
+    if (
+        currentDate.getMonth() < startDate.getMonth() ||
+        (currentDate.getMonth() === startDate.getMonth() && currentDate.getDate() < startDate.getDate())
+    ) {
+        yearsDiff--;
+    }
+
+    return yearsDiff;
+}
+
+async function fetchCommits() {
+    const response = await fetch("/api/github");
+    if (!response.ok) throw new Error("Failed to fetch commits");
+
+    const data = await response.json();
+    return data.commits;
+}
 
 export default Stats;
