@@ -73,12 +73,4 @@ function getYearsOfExperience(dateString: string) {
     return yearsDiff;
 }
 
-async function fetchCommits() {
-    const response = await fetch("/api/github");
-    if (!response.ok) throw new Error("Failed to fetch commits");
-
-    const data = await response.json();
-    return data.commits;
-}
-
 export default Stats;
