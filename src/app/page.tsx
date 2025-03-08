@@ -1,20 +1,17 @@
 "use client";
 
-import {Button} from "@/components/ui/button";
-import {FiDownload} from "react-icons/fi";
-
 // components
 import Social from "@/components/Social";
 import Photo from "@/components/Photo";
 import Stats from "@/components/Stats";
 
 export default function Home() {
-    const downloadCV = () => {
-        const link = document.createElement('a');
-        link.href = '/assets/CV_Filip_Tomanec.pdf';
-        link.download = 'CV_Filip_Tomanec.pdf';
-        link.click();
-    }
+    // const downloadCV = () => {
+    //     const link = document.createElement('a');
+    //     link.href = '/assets/CV_Filip_Tomanec.pdf';
+    //     link.download = 'CV_Filip_Tomanec.pdf';
+    //     link.click();
+    // }
 
     return (
         <section className="h-full">
@@ -32,15 +29,15 @@ export default function Home() {
                         </p>
                         {/* btn and socials */}
                         <div className="flex flex-col xl:flex-row items-center gap-8">
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="uppercase flex items-center gap-2"
-                                onClick={downloadCV}
-                            >
-                                <span>Stáhnout CV</span>
-                                <FiDownload className="text-xl"/>
-                            </Button>
+                            {/*<Button*/}
+                            {/*    variant="outline"*/}
+                            {/*    size="lg"*/}
+                            {/*    className="uppercase flex items-center gap-2"*/}
+                            {/*    onClick={downloadCV}*/}
+                            {/*>*/}
+                            {/*    <span>Stáhnout CV</span>*/}
+                            {/*    <FiDownload className="text-xl"/>*/}
+                            {/*</Button>*/}
                             <div className="mb-8 xl:mb-0">
                                 <Social
                                     containerStyles="flex gap-6"
