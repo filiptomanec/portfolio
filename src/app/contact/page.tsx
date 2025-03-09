@@ -5,8 +5,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { ErrorMessage, Field, Form, Formik } from "formik";
+import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
+
+interface ContactFormValues {
+  name: string;
+  surname: string;
+  email: string;
+  phone: string;
+  message: string;
+}
 
 const info = [
   {
@@ -26,7 +34,10 @@ const validationSchema = Yup.object({
 });
 
 const Contact = () => {
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+  const handleSubmit = async (
+    values: ContactFormValues,
+    { setSubmitting, resetForm }: FormikHelpers<ContactFormValues>,
+  ) => {
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

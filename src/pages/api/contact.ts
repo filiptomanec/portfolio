@@ -1,6 +1,10 @@
 import nodemailer from "nodemailer";
+import { NextApiRequest, NextApiResponse } from "next";
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   if (req.method === "POST") {
     const { name, surname, email, phone, message } = req.body;
 
@@ -31,7 +35,9 @@ export default async function handler(req, res) {
       await transporter.sendMail(mailOptions);
       res.status(200).json({ message: "Zpráva byla odeslána!" });
     } catch (error) {
-      res.status(500).json({ error: "Došlo k chybě při odesílání zprávy." });
+      res
+        .status(500)
+        .json({ error: "Došlo k chybě při odesílání zprávy: " + error });
     }
   } else {
     res.status(405).json({ error: "Metoda není povolena." });
