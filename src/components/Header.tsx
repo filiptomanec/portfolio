@@ -1,9 +1,8 @@
 import Link from "next/link";
-import {Button} from "./ui/button";
 
 // components
-import Nav from "./Nav";
 import MobileNav from "./MobileNav";
+import Nav from "@/components/Nav";
 
 const Header = () => {
     return (
@@ -19,9 +18,9 @@ const Header = () => {
                 {/* desktop nav & hire me button */}
                 <div className="hidden xl:flex items-center gap-8">
                     <Nav/>
-                    <Link href="/contact">
-                        <Button>Hire me</Button>
-                    </Link>
+                    {/*<Link href="/contact">*/}
+                    {/*    <Button>Hire me</Button>*/}
+                    {/*</Link>*/}
                 </div>
 
                 {/* mobile nav */}

@@ -2,6 +2,7 @@
 
 import CountUp from "react-countup";
 import useGithubCommits from "@/hooks/useGithubCommits";
+import {getYearsOfExperience} from "@/lib/utils";
 
 const Stats = () => {
     const {commits} = useGithubCommits();
@@ -56,21 +57,5 @@ const Stats = () => {
         </section>
     );
 };
-
-function getYearsOfExperience(dateString: string) {
-    const startDate = new Date(dateString);
-    const currentDate = new Date();
-
-    let yearsDiff = currentDate.getFullYear() - startDate.getFullYear();
-
-    if (
-        currentDate.getMonth() < startDate.getMonth() ||
-        (currentDate.getMonth() === startDate.getMonth() && currentDate.getDate() < startDate.getDate())
-    ) {
-        yearsDiff--;
-    }
-
-    return yearsDiff;
-}
 
 export default Stats;

@@ -7,30 +7,30 @@ import {motion} from "framer-motion";
 const services = [
     {
         num: "01",
-        title: "Web Development",
+        title: "Webové aplikace",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+            "Vytvářím moderní, rychlé a škálovatelné webové aplikace na míru. Používám nejnovější technologie jako React, Next.js a Tailwind CSS pro dosažení maximálního výkonu a uživatelského zážitku.",
         href: "",
     },
     {
         num: "02",
-        title: "UI/UX Design",
+        title: "Mobilní aplikace",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+            "Navrhuji a vyvíjím mobilní aplikace pro iOS i Android s důrazem na intuitivní ovládání a vysokou výkonnost. Využívám frameworky jako React Native, abych zajistil plynulý chod na všech zařízeních.",
         href: "",
     },
     {
         num: "03",
-        title: "Logo Design",
+        title: "UI/UX Stylování",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+            "Design není jen o vzhledu, ale i o funkčnosti. Optimalizuji uživatelské rozhraní a zkušenost (UI/UX) tak, aby byla aplikace přehledná, přívětivá a snadno použitelná.",
         href: "",
     },
     {
         num: "04",
         title: "SEO",
         description:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tenetur.",
+            "Pomáhám webům získat lepší pozice ve vyhledávačích díky optimalizaci obsahu, rychlosti načítání a technickému SEO. Zajišťuji, aby váš web byl viditelný pro správné publikum.",
         href: "",
     },
 ];
@@ -47,8 +47,8 @@ const Services = () => {
                     }}
                     className="grid grid-cols-1 md:grid-cols-2 gap-[60px]"
                 >
-                    {services.map((service, index) => {
-                        return (
+                    <>
+                        {services.map((service, index) => (
                             <div
                                 key={index}
                                 className="flex-1 flex flex-col justify-center gap-6 group"
@@ -75,8 +75,8 @@ const Services = () => {
                                 {/* border */}
                                 <div className="border-b border-white/20 w-full"></div>
                             </div>
-                        );
-                    })}
+                        ))}
+                    </>
                 </motion.div>
             </div>
         </section>

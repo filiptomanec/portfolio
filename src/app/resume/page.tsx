@@ -1,52 +1,46 @@
 "use client";
 
-import {FaCss3, FaFigma, FaHtml5, FaJs, FaNodeJs, FaReact,} from "react-icons/fa";
+import {FaBootstrap, FaCss3, FaFigma, FaHtml5, FaJava, FaReact,} from "react-icons/fa";
 
-import {SiNextdotjs, SiTailwindcss} from "react-icons/si";
+import {SiJavascript, SiMui, SiTailwindcss, SiTypescript} from "react-icons/si";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 
 import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/tooltip";
 
 import {ScrollArea} from "@/components/ui/scroll-area";
 import {motion} from "framer-motion";
+import {BiLogoSpringBoot} from "react-icons/bi";
+import {RiNextjsFill} from "react-icons/ri";
+import {getYearsOfExperience} from "@/lib/utils";
 
 // about data
 const about = {
-    title: "About me",
-    description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+    title: "O mně",
+    description: "",
     info: [
         {
-            fieldName: "Name",
-            fieldValue: "Luke Coleman",
+            fieldName: "Jméno",
+            fieldValue: "Filip Tomanec",
         },
         {
-            fieldName: "Phone",
-            fieldValue: "(+40) 321 654 678",
+            fieldName: "Zkušenosti",
+            fieldValue: `${getYearsOfExperience("2020-03-01")}+ let`,
         },
         {
-            fieldName: "Experience",
-            fieldValue: "12+ Years",
-        },
-        {
-            fieldName: "Skype",
-            fieldValue: "luke.01",
-        },
-        {
-            fieldName: "Nationality",
-            fieldValue: "American",
+            fieldName: "Stát",
+            fieldValue: "Česká republika",
         },
         {
             fieldName: "Email",
-            fieldValue: "luke.01@gmail.com",
+            fieldValue: "tomanec.f@gmail.com",
         },
         {
-            fieldName: "Freelance",
-            fieldValue: "Available",
+            fieldName: "Spolupráce na IČO",
+            fieldValue: "Ano",
         },
         {
-            fieldName: "Languages",
-            fieldValue: "English, Spanish",
+            fieldName: "Jazyky",
+            fieldValue: "Čeština, Angličtina",
         },
     ],
 };
@@ -54,39 +48,29 @@ const about = {
 // experience data
 const experience = {
     icon: "/assets/resume/badge.svg",
-    title: "My experience",
+    title: "Moje zkušenosti",
     description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+        "Mám více než 5 let zkušeností s vývojem webových a mobilních aplikací. Pracuji s moderními technologiemi jako React, React Native a Spring Boot, a zaměřuji se na efektivní a škálovatelná řešení.",
     items: [
         {
-            company: "Tech Solutions Inc.",
-            position: "Full Stack Developer",
-            duration: "2022 - Present",
+            company: "React",
+            position: "Medior Frontend Developer",
+            duration: "2024 - současnost",
         },
         {
-            company: "Web Design Studio",
-            position: "Front-End Developer Intern",
-            duration: "Summer 2021",
+            company: "React, React Native, Spring Boot",
+            position: "Medior Full Stack Developer",
+            duration: "2022 - 2024",
         },
         {
-            company: "E-commerce Startup",
-            position: "Freelance Web Developer",
+            company: "React Native",
+            position: "Junior Mobile Developer",
+            duration: "2021 - 2022",
+        },
+        {
+            company: "Java - Spring Boot",
+            position: "Junior Backend Developer",
             duration: "2020 - 2021",
-        },
-        {
-            company: "Tech Academy",
-            position: "Teaching Assistant",
-            duration: "2019 - 2020",
-        },
-        {
-            company: "Digital Agency",
-            position: "UI/UX Designer",
-            duration: "2018 - 2019",
-        },
-        {
-            company: "Software Development Firm",
-            position: "Junior Developer",
-            duration: "2017 - 2018",
         },
     ],
 };
@@ -94,48 +78,33 @@ const experience = {
 // education data
 const education = {
     icon: "/assets/resume/cap.svg",
-    title: "My education",
+    title: "Moje vzdělání",
     description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+        "Mám akademické vzdělání v oblasti řídicích a informačních systémů a odbornou přípravu v oblasti informačních technologií.",
     items: [
         {
-            institution: "Online Course Platform",
-            degree: "Full Stack Web Development Bootcamp",
-            duration: "2023",
+            institution: "VŠB-TUO, Fakulta elektrotechniky a informatiky",
+            degree: "Navazující magisterské studium",
+            duration: "2021 – 2023",
         },
         {
-            institution: "Codecademy",
-            degree: "Front-end Track",
-            duration: "2022",
+            institution: "VŠB-TUO, Fakulta elektrotechniky a informatiky",
+            degree: "Bakalářské studium",
+            duration: "2018 – 2021",
         },
         {
-            institution: "Online Course",
-            degree: "Programming Course",
-            duration: "2020 - 2021",
-        },
-        {
-            institution: "Tech Institute",
-            degree: "Certified Web Developer",
-            duration: "2019",
-        },
-        {
-            institution: "Design School",
-            degree: "Diploma in Graphic Design",
-            duration: "2016 - 2018",
-        },
-        {
-            institution: "Community College",
-            degree: "Associate Degree in Computer Science",
-            duration: "2014 - 2016",
+            institution: "Střední průmyslová škola elektrotechniky a informatiky",
+            degree: "Střední odborné vzdělání s maturitou",
+            duration: "2014 – 2018",
         },
     ],
 };
 
 // skills data
 const skills = {
-    title: "My skills",
+    title: "Moje dovednosti",
     description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.",
+        "Pracuji s moderními technologiemi a nástroji, které mi umožňují vytvářet interaktivní, responzivní a výkonné aplikace. Od HTML a CSS po pokročilé frameworky jako React a Next.js.",
     skillList: [
         {
             icon: <FaHtml5/>,
@@ -146,24 +115,40 @@ const skills = {
             name: "css 3",
         },
         {
-            icon: <FaJs/>,
+            icon: <SiJavascript/>,
             name: "javascript",
+        },
+        {
+            icon: <SiTypescript/>,
+            name: "typescript",
         },
         {
             icon: <FaReact/>,
             name: "react.js",
         },
         {
-            icon: <SiNextdotjs/>,
-            name: "next.js",
+            icon: <RiNextjsFill/>,
+            name: "Next.js",
+        },
+        {
+            icon: <FaJava/>,
+            name: "java",
+        },
+        {
+            icon: <BiLogoSpringBoot/>,
+            name: "spring boot",
+        },
+        {
+            icon: <SiMui/>,
+            name: "Material-UI",
+        },
+        {
+            icon: <FaBootstrap/>,
+            name: "Bootstrap",
         },
         {
             icon: <SiTailwindcss/>,
-            name: "tailwind.css",
-        },
-        {
-            icon: <FaNodeJs/>,
-            name: "node.js",
+            name: "Tailwind CSS",
         },
         {
             icon: <FaFigma/>,
@@ -188,10 +173,10 @@ const Resume = () => {
                     className="flex flex-col xl:flex-row gap-[60px]"
                 >
                     <TabsList className="flex flex-col w-full max-w-[380px] mx-auto xl:mx-0 gap-6">
-                        <TabsTrigger value="experience">Experience</TabsTrigger>
-                        <TabsTrigger value="education">Education</TabsTrigger>
-                        <TabsTrigger value="skills">Skills</TabsTrigger>
-                        <TabsTrigger value="about">About me</TabsTrigger>
+                        <TabsTrigger value="experience">Zkušenosti</TabsTrigger>
+                        <TabsTrigger value="education">Vzdělání</TabsTrigger>
+                        <TabsTrigger value="skills">Dovednosti</TabsTrigger>
+                        <TabsTrigger value="about">O mně</TabsTrigger>
                     </TabsList>
 
                     {/* content */}
@@ -241,7 +226,7 @@ const Resume = () => {
                                             return (
                                                 <li
                                                     key={index}
-                                                    className="bg-[#232329] h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                                                    className="bg-[#232329] h-[244px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                                                 >
                                                     <span className="text-accent">{item.duration}</span>
                                                     <h3 className="text-xl max-w-[260px] min-h-[60px] text-center lg:text-left">

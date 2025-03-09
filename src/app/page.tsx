@@ -24,20 +24,13 @@ export default function Home() {
                             Ahoj, jsem<br/> <span className="text-accent">Filip Tomanec</span>
                         </h1>
                         <p className="max-w-[500px] mb-9 text-white/80">
-                            Jsem Full-Stack vývojář z Ostravy, zaměřený na tvorbu webových a mobilních aplikací. Pracuji
-                            s Reactem, Spring Boot a dalšími technologiemi.
+                            Jsem Full-Stack vývojář z Ostravy, zaměřený na tvorbu webových a mobilních aplikací.
+                            Mám zkušenosti s vývojem frontendu v TypeScriptu - React/React-Native a backendu v Javě -
+                            Spring Boot. Mám za sebou projekty v různých odvětvích, kde jsem se podílel na vývoji
+                            robustních a efektivních řešení.
                         </p>
                         {/* btn and socials */}
                         <div className="flex flex-col xl:flex-row items-center gap-8">
-                            {/*<Button*/}
-                            {/*    variant="outline"*/}
-                            {/*    size="lg"*/}
-                            {/*    className="uppercase flex items-center gap-2"*/}
-                            {/*    onClick={downloadCV}*/}
-                            {/*>*/}
-                            {/*    <span>Stáhnout CV</span>*/}
-                            {/*    <FiDownload className="text-xl"/>*/}
-                            {/*</Button>*/}
                             <div className="mb-8 xl:mb-0">
                                 <Social
                                     containerStyles="flex gap-6"
