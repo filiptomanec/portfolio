@@ -22,7 +22,7 @@ export default function Home() {
             <span className="text-xl">Software Developer</span>
             <h1 className="h1 mb-6">
               Ahoj, jsem
-              <br /> <span className="text-accent h2">Filip Tomanec</span>
+              <br /> <span className="text-accent h2 xl:h1">Filip Tomanec</span>
             </h1>
             <p className="max-w-[500px] mb-9 text-white/80">
               Jsem Full-Stack vývojář z Ostravy, zaměřený na tvorbu webových a
