@@ -80,6 +80,8 @@ const Contact = () => {
                 <Form className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl">
                   <h3 className="text-4xl text-accent">Pojďme spolupracovat</h3>
                   <p className="text-white/60">
+                    Máte zájem o spolupráci nebo nějaký dotaz? Napište mi.
+                    <br />
                     Rád bych se dozvěděl více o Vašich potřebách a jak Vám můžu
                     pomoci.
                   </p>
