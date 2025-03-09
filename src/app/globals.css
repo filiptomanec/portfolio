@@ -26,4 +26,9 @@
     .text-outline-hover {
         -webkit-text-stroke: 1px #00ff99;
     }
+
+    .mask-gradient {
+        mask: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
+        -webkit-mask: radial-gradient(circle, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
+    }
 }
