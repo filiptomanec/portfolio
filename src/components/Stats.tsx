@@ -26,7 +26,7 @@ const Stats = () => {
     {
       num: commits,
       plus: false,
-      text: "Code commits",
+      text: "Commitů kódu",
     },
   ];
 
