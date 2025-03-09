@@ -16,8 +16,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Filip Tomanec",
-  description: "Portfolio",
+  title: "Filip Tomanec - Software Developer",
+  description:
+    "Filip Tomanec - Full-Stack software developer, specializující se na vývoj webových a mobilních aplikací. Má zkušenosti s React, React Native, TypeScript a Java Spring Boot, zaměřuje se na robustní a efektivní řešení v oblasti frontend a backend vývoje.",
 };
 
 export default function RootLayout({
