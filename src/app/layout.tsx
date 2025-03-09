@@ -1,6 +1,6 @@
-import type {Metadata} from "next";
-import {JetBrains_Mono} from "next/font/google";
-import {ReactNode} from "react";
+import type { Metadata } from "next";
+import { JetBrains_Mono } from "next/font/google";
+import { ReactNode } from "react";
 import "./globals.css";
 
 // components
@@ -10,26 +10,28 @@ import StairTransition from "@/components/StairTransition";
 import ReactQueryProvider from "@/lib/providers/ReactQueryProvider";
 
 const jetbrainsMono = JetBrains_Mono({
-    subsets: ["latin"],
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-    variable: "--font-jetbrainsMono",
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+  variable: "--font-jetbrainsMono",
 });
 
 export const metadata: Metadata = {
-    title: "Filip Tomanec",
-    description: "Portfolio",
+  title: "Filip Tomanec",
+  description: "Portfolio",
 };
 
-export default function RootLayout({children}: Readonly<{ children: ReactNode; }>) {
-    return (
-        <html lang="en">
-        <body className={jetbrainsMono.variable}>
+export default function RootLayout({
+  children,
+}: Readonly<{ children: ReactNode }>) {
+  return (
+    <html lang="en">
+      <body className={jetbrainsMono.variable}>
         <ReactQueryProvider>
-            <Header/>
-            <StairTransition/>
-            <PageTransition>{children}</PageTransition>
+          <Header />
+          <StairTransition />
+          <PageTransition>{children}</PageTransition>
         </ReactQueryProvider>
-        </body>
-        </html>
-    );
+      </body>
+    </html>
+  );
 }
