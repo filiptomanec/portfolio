@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import { ReactNode } from "react";
-import "./globals.css";
-
-// components
+import "./globals.css"; // components
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import ReactQueryProvider from "@/lib/providers/ReactQueryProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -32,6 +31,7 @@ export default function RootLayout({
           <StairTransition />
           <PageTransition>{children}</PageTransition>
         </ReactQueryProvider>
+        <Analytics />
       </body>
     </html>
   );
