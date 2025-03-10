@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/:path*",
-      "destination": "https://www.filiptomanec.cz/:path*",
-      "permanent": true
-    }
-  ]
-}
