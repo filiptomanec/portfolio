@@ -1,39 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Portfolio
 
-## Getting Started
+Welcome to my portfolio website! This is a personal project showcasing my experience in web and mobile application
+development.
 
-First, run the development server:
+🌐 **Live Website:** [filiptomanec.cz](https://www.filiptomanec.cz)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Home** – Introduction and overview.
+- **Services** – The technologies and services I offer.
+- **Resume** – My professional experience and skills.
+- **Contact** – Get in touch with me easily.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and
-load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: Next.js
+- **Styling**: Tailwind CSS
+- **Hosting**: Vercel
 
-## Learn More
+## 🎨 Design
 
-To learn more about Next.js, take a look at the following resources:
+This portfolio is based on a pre-made design template, which has been customized to fit my style and content.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is automatically deployed on **Vercel**.
 
-## Deploy on Vercel
+## 📬 Contact
 
-The easiest way to deploy your Next.js app is to use
-the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the
-creators of Next.js.
+If you'd like to get in touch, feel free to reach out via the contact section on the website!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
