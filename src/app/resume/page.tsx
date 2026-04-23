@@ -1,34 +1,17 @@
 "use client";
 
-import {
-  FaBootstrap,
-  FaCss3,
-  FaFigma,
-  FaHtml5,
-  FaJava,
-  FaReact,
-} from "react-icons/fa";
+import {FaBootstrap, FaCss3, FaFigma, FaHtml5, FaJava, FaReact,} from "react-icons/fa";
 
-import {
-  SiJavascript,
-  SiMui,
-  SiTailwindcss,
-  SiTypescript,
-} from "react-icons/si";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {SiJavascript, SiMui, SiTailwindcss, SiTypescript,} from "react-icons/si";
+import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/tooltip";
 
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { motion } from "framer-motion";
-import { BiLogoSpringBoot } from "react-icons/bi";
-import { RiNextjsFill } from "react-icons/ri";
-import { getYearsOfExperience } from "@/lib/utils";
+import {ScrollArea} from "@/components/ui/scroll-area";
+import {motion} from "framer-motion";
+import {BiLogoSpringBoot} from "react-icons/bi";
+import {RiNextjsFill} from "react-icons/ri";
+import {getYearsOfExperience} from "@/lib/utils";
 
 // about data
 const about = {
@@ -56,10 +39,6 @@ const about = {
       fieldValue: "tomanec.f@gmail.com",
     },
     {
-      fieldName: "Spolupráce na IČO",
-      fieldValue: "Ano",
-    },
-    {
       fieldName: "Jazyky",
       fieldValue: "Čeština, Angličtina",
     },
@@ -70,8 +49,7 @@ const about = {
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "Moje zkušenosti",
-  description:
-    "Mám více než 5 let zkušeností s vývojem webových a mobilních aplikací. Pracuji s moderními technologiemi jako React, React Native a Spring Boot, a zaměřuji se na efektivní a škálovatelná řešení.",
+  description: `Mám více než ${getYearsOfExperience("2020-03-01")} let zkušeností s vývojem webových a mobilních aplikací. Pracuji s moderními technologiemi jako React, React Native a Spring Boot, a zaměřuji se na efektivní a škálovatelná řešení.`,
   items: [
     {
       company: "React",
