@@ -3,7 +3,7 @@ import {useQuery} from "@tanstack/react-query";
 const fetchCommits = async () => {
     const response = await fetch("/api/github");
     const data = await response.json();
-    return data.data.user.contributionsCollection.contributionCalendar.totalContributions;
+    return data.totalContributions;
 };
 
 const useGithubCommits = () => {

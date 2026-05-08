@@ -1,17 +1,34 @@
 "use client";
 
-import {FaBootstrap, FaCss3, FaFigma, FaHtml5, FaJava, FaReact,} from "react-icons/fa";
+import {
+  FaBootstrap,
+  FaCss3,
+  FaFigma,
+  FaHtml5,
+  FaJava,
+  FaReact,
+} from "react-icons/fa";
 
-import {SiJavascript, SiMui, SiTailwindcss, SiTypescript,} from "react-icons/si";
-import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
+import {
+  SiJavascript,
+  SiMui,
+  SiTailwindcss,
+  SiTypescript,
+} from "react-icons/si";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import {Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,} from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
-import {ScrollArea} from "@/components/ui/scroll-area";
-import {motion} from "framer-motion";
-import {BiLogoSpringBoot} from "react-icons/bi";
-import {RiNextjsFill} from "react-icons/ri";
-import {getYearsOfExperience} from "@/lib/utils";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { motion } from "framer-motion";
+import { BiLogoSpringBoot } from "react-icons/bi";
+import { RiNextjsFill } from "react-icons/ri";
+import { getYearsOfExperience } from "@/lib/utils";
 
 // about data
 const about = {
