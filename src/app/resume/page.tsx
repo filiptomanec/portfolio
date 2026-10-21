@@ -70,22 +70,22 @@ const experience = {
   items: [
     {
       company: "React",
-      position: "Medior Frontend Developer",
+      position: "Frontend Developer",
       duration: "2024 - současnost",
     },
     {
       company: "React, React Native, Spring Boot",
-      position: "Medior Full Stack Developer",
+      position: "Full Stack Developer",
       duration: "2022 - 2024",
     },
     {
       company: "React Native",
-      position: "Junior Mobile Developer",
+      position: "Mobile Developer",
       duration: "2021 - 2022",
     },
     {
       company: "Java - Spring Boot",
-      position: "Junior Backend Developer",
+      position: "Backend Developer",
       duration: "2020 - 2021",
     },
   ],
