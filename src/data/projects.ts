@@ -116,4 +116,48 @@ export const projects: Project[] = [
       github: "https://github.com/filiptomanec/investio",
     },
   },
+  {
+    slug: "vzduch-doma",
+    title: "Vzduch doma",
+    category: "IoT · web · PWA",
+    year: "2026",
+    description:
+      "Vzduch doma hlídá kvalitu vzduchu v mém obýváku. Vlastní zařízení s čipem ESP32 a senzorem Sensirion SCD30 měří každé tři minuty oxid uhličitý, teplotu a vlhkost a posílá je přes Wi-Fi na server. Aplikace pak ukáže, jestli je čas vyvětrat, odhadne, kdy vzduch překročí doporučenou hranici, a pošle upozornění na telefon. Bez přihlášení uvidíte živou ukázku se simulovanými daty.",
+    highlights: [
+      {
+        title: "Od senzoru až na obrazovku",
+        text: "Celý řetězec je můj: ESP32 se senzorem SCD30 posílá měření do API, data se ukládají do databáze Postgres a aplikace je zobrazuje v reálném čase.",
+      },
+      {
+        title: "Poradí, kdy otevřít okno",
+        text: "Z průběhu CO₂ aplikace spočítá trend a odhadne, za jak dlouho překročí 1 000 ppm. Pozná také, kdy se naposledy větralo.",
+      },
+      {
+        title: "Upozornění přímo na telefon",
+        text: "Aplikaci si přidáte na plochu telefonu jako PWA. Jakmile CO₂ překročí nastavený limit, přijde push notifikace.",
+      },
+      {
+        title: "Živá ukázka pro návštěvníky",
+        text: "Moje data jsou za heslem. Ostatní uvidí simulovaný byt, ve kterém čas běží 72× rychleji, takže je vidět, jak se vzduch během dne mění.",
+      },
+    ],
+    stack: [
+      "ESP32",
+      "Sensirion SCD30",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Recharts",
+      "Postgres (Neon)",
+      "Web Push",
+      "Vercel",
+    ],
+    image: {
+      src: "/assets/projects/vzduch-doma.webp",
+      alt: "Aplikace Vzduch doma v tmavém režimu. Uprostřed je prstenec s hodnotou CO₂ 691 ppm a štítkem Výborný, pod ním nápis Vzduch je svěží. Vpravo jsou karty s teplotou 21,2 °C a vlhkostí 50 % s malými grafy za posledních 24 hodin.",
+    },
+    links: {
+      live: "https://air.filiptomanec.cz",
+    },
+  },
 ];

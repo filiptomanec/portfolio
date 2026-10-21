@@ -31,7 +31,7 @@ const ProjectsShowcase = () => {
             <p className="text-white/60">
               Ukázky projektů, které jsem navrhl a&nbsp;postavil od prvního
               řádku kódu až po hotový web. Každý si můžete sami vyzkoušet
-              a&nbsp;prohlédnout si jeho zdrojový kód na GitHubu.
+              a&nbsp;u&nbsp;většiny si prohlédnout i&nbsp;zdrojový kód na GitHubu.
             </p>
           </header>
 
