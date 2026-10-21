@@ -23,10 +23,8 @@ export type Project = {
     /** Popis toho, co je na obrázku vidět (ne „screenshot projektu“). */
     alt: string;
   };
-  links: {
-    live: string;
-    github?: string;
-  };
+  /** Aspoň jeden odkaz. Bez živé ukázky (např. hardware) je hlavním odkazem GitHub. */
+  links: { live: string; github?: string } | { live?: undefined; github: string };
 };
 
 export const projects: Project[] = [
@@ -158,6 +156,48 @@ export const projects: Project[] = [
     },
     links: {
       live: "https://air.filiptomanec.cz",
+    },
+  },
+  {
+    slug: "domaci-panel",
+    title: "Domácí ovládací panel",
+    category: "Hardware · C++ · IoT",
+    year: "2026",
+    description:
+      "Kulatý dotykový displej na zdi, přes který doma ovládám pět žaluzií a sleduju teplotu, vlhkost, CO₂ i spotřebu elektřiny. Ukáže také meteoradar ČHMÚ a letadla, která zrovna letí nad námi, i s trasou. Běží úplně samostatně, bez serveru a bez cloudu. S chytrými zařízeními doma i s veřejnými službami komunikuje napřímo.",
+    highlights: [
+      {
+        title: "Plynulý, i když síť zdržuje",
+        text: "Stažení dat trvalo až\u00a03\u00a0s a displej mezitím nereagoval na dotyk. Síť jsem přesunul do vlastního vlákna na druhém jádře a nejdelší zásek klesl z 2,7\u00a0s na 0,14\u00a0s.",
+      },
+      {
+        title: "Radar letadel nad domem",
+        text: "Letadla mají barvu podle výšky a ikonu podle velikosti, vrtulníky vlastní. Mapu přiblížíte od 28 do 296\u00a0km a po klepnutí uvidíte volací znak, typ, trasu a u většiny letadel i fotku.",
+      },
+      {
+        title: "Mapu si panel kreslí sám",
+        text: "Hranice států jsem zjednodušil ze 17\u00a0644 bodů na 1\u00a0899, takže se vejdou do 7,6\u00a0kB. Panel z nich vykreslí mapu pro jakékoli místo, které vyberete klepnutím.",
+      },
+      {
+        title: "Wi-Fi bez hesla v kódu",
+        text: "Nový panel ukáže QR kód. Telefon se k němu připojí, vyberete domácí síť a zadáte heslo. V konfiguraci ani v repozitáři tak nejsou žádné přístupové údaje.",
+      },
+    ],
+    stack: [
+      "ESP32-S3",
+      "C++",
+      "ESPHome",
+      "LVGL",
+      "FreeRTOS",
+      "Python",
+      "Vercel",
+    ],
+    image: {
+      src: "/assets/projects/esp-home-panel.webp",
+      alt: "Tři kulaté obrazovky domácího panelu. Vlevo teplota 23,4 °C a 1090 ppm CO₂ v obýváku, uprostřed radar s 26 letadly nad mapou Česka, vpravo ovládání žaluzie otevřené na 75 %.",
+    },
+    links: {
+      github: "https://github.com/filiptomanec/esp-home-panel",
     },
   },
 ];

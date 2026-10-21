@@ -21,7 +21,10 @@ interface IProjectCardProps {
 
 const ProjectCard = ({ project, index }: IProjectCardProps) => {
   const num = String(index + 1).padStart(2, "0");
-  const host = new URL(project.links.live).host;
+  const { live, github } = project.links;
+  const host = live && new URL(live).host;
+  // Bez živé ukázky (např. hardware) přebírá roli hlavního odkazu GitHub.
+  const githubIsPrimary = !live;
   const reversed = index % 2 === 1;
   const titleId = `project-${project.slug}`;
 
@@ -46,18 +49,20 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
             className="pointer-events-none absolute -inset-3 rounded-[28px] bg-accent/10 opacity-0 blur-3xl transition-opacity duration-700 group-focus-within:opacity-100 group-hover:opacity-100 motion-reduce:transition-none"
           />
           <div className="relative overflow-hidden rounded-xl border border-white/10 bg-[#232329] transition-colors duration-500 group-focus-within:border-accent/40 group-hover:border-accent/40">
-            {/* lišta prohlížeče */}
-            <div
-              aria-hidden="true"
-              className="flex h-9 items-center gap-2 border-b border-white/10 px-4"
-            >
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white/20" />
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white/20" />
-              <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent/70" />
-              <span className="ml-3 truncate text-xs leading-none text-white/60">
-                {host}
-              </span>
-            </div>
+            {/* lišta prohlížeče – jen u projektů s živým webem */}
+            {host && (
+              <div
+                aria-hidden="true"
+                className="flex h-9 items-center gap-2 border-b border-white/10 px-4"
+              >
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white/20" />
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-white/20" />
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-accent/70" />
+                <span className="ml-3 truncate text-xs leading-none text-white/60">
+                  {host}
+                </span>
+              </div>
+            )}
             <div className="relative aspect-video overflow-hidden">
               <Image
                 src={project.image.src}
@@ -75,7 +80,8 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
                 aria-hidden="true"
                 className="absolute bottom-4 right-4 hidden items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold leading-none text-primary opacity-0 transition-all duration-500 group-hover:opacity-100 motion-safe:translate-y-2 motion-safe:group-hover:translate-y-0 sm:flex"
               >
-                Otevřít web <BsArrowUpRight />
+                {githubIsPrimary ? "Zobrazit kód" : "Otevřít web"}{" "}
+                <BsArrowUpRight />
               </span>
             </div>
           </div>
@@ -113,32 +119,53 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
 
           <div className="flex flex-wrap items-center gap-3">
             {/*
-              Živá ukázka je „stretched link“: její ::after překrývá celou kartu,
-              takže je klikatelná celá karta, ale v DOM nejsou vnořené odkazy.
+              Hlavní odkaz (živá ukázka, jinak GitHub) je „stretched link“: jeho ::after
+              překrývá celou kartu, takže je klikatelná celá karta, ale v DOM nejsou
+              vnořené odkazy.
             */}
-            <a
-              href={project.links.live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "inline-flex h-[48px] items-center gap-2 rounded-full bg-accent px-6 font-semibold text-primary transition-colors hover:bg-accent-hover",
-                "after:absolute after:inset-0 after:z-[1] after:content-['']",
-                focusRing,
-              )}
-            >
-              Živá ukázka
-              <BsArrowUpRight
-                aria-hidden="true"
-                className="transition-transform duration-300 motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5"
-              />
-              <span className="sr-only">
-                {" "}
-                projektu {project.title} (otevře se v nové záložce)
-              </span>
-            </a>
-            {project.links.github && (
+            {live ? (
               <a
-                href={project.links.github}
+                href={live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "inline-flex h-[48px] items-center gap-2 rounded-full bg-accent px-6 font-semibold text-primary transition-colors hover:bg-accent-hover",
+                  "after:absolute after:inset-0 after:z-[1] after:content-['']",
+                  focusRing,
+                )}
+              >
+                Živá ukázka
+                <BsArrowUpRight
+                  aria-hidden="true"
+                  className="transition-transform duration-300 motion-safe:group-hover:-translate-y-0.5 motion-safe:group-hover:translate-x-0.5"
+                />
+                <span className="sr-only">
+                  {" "}
+                  projektu {project.title} (otevře se v nové záložce)
+                </span>
+              </a>
+            ) : (
+              <a
+                href={github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  "inline-flex h-[48px] items-center gap-2 rounded-full bg-accent px-6 font-semibold text-primary transition-colors hover:bg-accent-hover",
+                  "after:absolute after:inset-0 after:z-[1] after:content-['']",
+                  focusRing,
+                )}
+              >
+                <BsGithub aria-hidden="true" className="text-lg" />
+                Zdrojový kód
+                <span className="sr-only">
+                  {" "}
+                  projektu {project.title} na GitHubu (otevře se v nové záložce)
+                </span>
+              </a>
+            )}
+            {live && github && (
+              <a
+                href={github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
