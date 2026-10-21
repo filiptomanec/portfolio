@@ -164,23 +164,23 @@ export const projects: Project[] = [
     category: "Hardware · C++ · IoT",
     year: "2026",
     description:
-      "Kulatý dotykový displej na zdi, přes který doma ovládám pět žaluzií a sleduju teplotu, vlhkost, CO₂ i spotřebu elektřiny. Ukáže také meteoradar ČHMÚ a letadla, která zrovna letí nad námi, i s trasou. Běží úplně samostatně, bez serveru a bez cloudu. S chytrými zařízeními doma i s veřejnými službami komunikuje napřímo.",
+      "Na zdi mi visí kulatý dotykový panel, přes který ovládám pět žaluzií a sleduju teplotu, vlhkost, CO₂ i spotřebu elektřiny. Najdu na něm také animovaný meteoradar ČHMÚ a živou mapu letadel nad Českem, včetně jejich tras a podrobností o letech. Panel funguje úplně samostatně, bez serveru a cloudu. S domácími zařízeními i veřejnými službami komunikuje přímo.",
     highlights: [
       {
-        title: "Plynulý, i když síť zdržuje",
-        text: "Stažení dat trvalo až\u00a03\u00a0s a displej mezitím nereagoval na dotyk. Síť jsem přesunul do vlastního vlákna na druhém jádře a nejdelší zásek klesl z 2,7\u00a0s na 0,14\u00a0s.",
+        title: "Displej reaguje i při stahování dat",
+        text: "Stahování přes síť blokovalo dotyk až 2,7\u00a0sekundy. Přesunul jsem ho do samostatného vlákna na druhém jádře procesoru. Nejdelší zásek pak klesl na 0,14\u00a0sekundy.",
       },
       {
-        title: "Radar letadel nad domem",
-        text: "Letadla mají barvu podle výšky a ikonu podle velikosti, vrtulníky vlastní. Mapu přiblížíte od 28 do 296\u00a0km a po klepnutí uvidíte volací znak, typ, trasu a u většiny letadel i fotku.",
+        title: "Radar letadel s podrobnými informacemi",
+        text: "Barva letadla prozradí jeho výšku, ikona jeho velikost. Po klepnutí panel zobrazí volací znak, typ, trasu, rychlost a výšku. U zhruba dvou třetin letadel je k dispozici i fotka.",
       },
       {
-        title: "Mapu si panel kreslí sám",
-        text: "Hranice států jsem zjednodušil ze 17\u00a0644 bodů na 1\u00a0899, takže se vejdou do 7,6\u00a0kB. Panel z nich vykreslí mapu pro jakékoli místo, které vyberete klepnutím.",
+        title: "Vlastní mapa, méně dat",
+        text: "Mapu si panel vykresluje sám pro libovolné místo. Hranice států jsem zjednodušil ze 17\u00a0644 bodů na 1\u00a0899, takže se vejdou do pouhých 7,6\u00a0kB.",
       },
       {
         title: "Wi-Fi bez hesla v kódu",
-        text: "Nový panel ukáže QR kód. Telefon se k němu připojí, vyberete domácí síť a zadáte heslo. V konfiguraci ani v repozitáři tak nejsou žádné přístupové údaje.",
+        text: "Při prvním spuštění panel zobrazí QR kód. Telefonem se připojíte, vyberete domácí Wi-Fi a zadáte heslo. Přístupové údaje tak nemusí být uložené v kódu ani v repozitáři.",
       },
     ],
     stack: [
@@ -194,7 +194,7 @@ export const projects: Project[] = [
     ],
     image: {
       src: "/assets/projects/esp-home-panel.webp",
-      alt: "Tři kulaté obrazovky domácího panelu. Vlevo teplota 23,4 °C a 1090 ppm CO₂ v obýváku, uprostřed radar s 26 letadly nad mapou Česka, vpravo ovládání žaluzie otevřené na 75 %.",
+      alt: "Tři kulaté obrazovky domácího ovládacího panelu vedle sebe. Vlevo je teplota 23,4 °C a CO₂ 1 090 ppm, uprostřed radar s 26 letadly nad mapou Česka a vpravo ovládání žaluzie nastavené na 75 %.",
     },
     links: {
       github: "https://github.com/filiptomanec/esp-home-panel",
