@@ -13,6 +13,11 @@ const links = [
         path: "/services",
     },
     {
+        name: "projekty",
+        path: "/projects",
+        highlight: true,
+    },
+    {
         name: "životopis",
         path: "/resume",
     },
@@ -29,15 +34,21 @@ const links = [
 const Nav = () => {
     const pathname = usePathname();
     return (
-        <nav className="flex gap-8">
+        <nav className="flex items-center gap-8">
             {links.map((link, index) => {
                 return (
                     <Link
                         href={link.path}
                         key={index}
-                        className={`${
-                            link.path === pathname && "text-accent border-b-2 border-accent"
-                        } capitalize font-medium hover:text-accent transition-all`}
+                        className={
+                            link.highlight
+                                ? `${
+                                    link.path === pathname && "ring-2 ring-accent ring-offset-4 ring-offset-primary"
+                                } capitalize font-semibold rounded-full bg-accent text-primary px-5 py-2 hover:bg-accent-hover transition-all`
+                                : `${
+                                    link.path === pathname && "text-accent border-b-2 border-accent"
+                                } capitalize font-medium hover:text-accent transition-all`
+                        }
                     >
                         {link.name}
                     </Link>

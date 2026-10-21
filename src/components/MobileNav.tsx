@@ -1,6 +1,12 @@
 "use client";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
@@ -14,6 +20,11 @@ const links = [
   {
     name: "služby",
     path: "/services",
+  },
+  {
+    name: "projekty",
+    path: "/projects",
+    highlight: true,
   },
   {
     name: "životopis",
@@ -39,6 +50,11 @@ const MobileNav = () => {
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
+        {/* skrytý nadpis a popis pro čtečky obrazovky (vyžaduje Radix Dialog) */}
+        <SheetTitle className="sr-only">Menu</SheetTitle>
+        <SheetDescription className="sr-only">
+          Navigace mezi stránkami webu
+        </SheetDescription>
         {/* logo */}
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/" onClick={() => setIsOpen(false)}>
@@ -55,10 +71,17 @@ const MobileNav = () => {
                 href={link.path}
                 key={index}
                 onClick={() => setIsOpen(false)}
-                className={`${
-                  link.path === pathname &&
-                  "text-accent border-b-2 border-accent"
-                } text-xl capitalize hover:text-accent transition-all`}
+                className={
+                  link.highlight
+                    ? `${
+                        link.path === pathname &&
+                        "ring-2 ring-accent ring-offset-4 ring-offset-primary"
+                      } text-xl capitalize font-semibold rounded-full bg-accent text-primary px-6 py-2 hover:bg-accent-hover transition-all`
+                    : `${
+                        link.path === pathname &&
+                        "text-accent border-b-2 border-accent"
+                      } text-xl capitalize hover:text-accent transition-all`
+                }
               >
                 {link.name}
               </Link>
