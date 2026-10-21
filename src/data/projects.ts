@@ -115,12 +115,12 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "vzduch-doma",
-    title: "Vzduch doma",
+    slug: "airsense",
+    title: "Airsense",
     category: "IoT · WEB · PWA",
     year: "2026",
     description:
-      "Vzduch doma hlídá, kdy je v mém obýváku čas vyvětrat. Vlastní zařízení se senzorem měří každé tři minuty množství CO₂, teplotu a vlhkost a posílá naměřené hodnoty přes Wi-Fi do aplikace. Ta sleduje vývoj CO₂, odhaduje, kdy překročí nastavenou hranici, a může poslat upozornění na telefon. Bez přihlášení si můžete vyzkoušet simulovaný byt s vymyšlenými daty.",
+      "Airsense hlídá, kdy je v mém obýváku čas vyvětrat. Vlastní zařízení se senzorem měří každé tři minuty množství CO₂, teplotu a vlhkost a posílá naměřené hodnoty přes Wi-Fi do aplikace. Ta sleduje vývoj CO₂, odhaduje, kdy překročí nastavenou hranici, a může poslat upozornění na telefon. Bez přihlášení si můžete vyzkoušet simulovaný byt s vymyšlenými daty.",
     highlights: [
       {
         title: "Od senzoru až na obrazovku",
@@ -151,8 +151,8 @@ export const projects: Project[] = [
       "Vercel",
     ],
     image: {
-      src: "/assets/projects/vzduch-doma.webp",
-      alt: "Aplikace Vzduch doma v tmavém režimu. Uprostřed je barevný prstenec s hodnotou CO₂ 691 ppm a hodnocením „Výborný“, pod ním text „Vzduch je svěží“. Vpravo jsou karty s teplotou 21,2 °C a vlhkostí 50 %, každá s grafem za posledních 24 hodin.",
+      src: "/assets/projects/airsense.webp",
+      alt: "Aplikace Airsense v tmavém režimu. Uprostřed je barevný prstenec s hodnotou CO₂ 884 ppm a hodnocením „Dobrý“, pod ním text „Vzduch je v pořádku“. Vpravo jsou karty s teplotou 21,4 °C a vlhkostí 46 %, každá s grafem za posledních 24 hodin.",
     },
     links: {
       live: "https://air.filiptomanec.cz",
