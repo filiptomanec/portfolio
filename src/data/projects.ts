@@ -37,7 +37,7 @@ export const projects: Project[] = [
       "Dům pod ořechem je návrh fiktivního přízemního rodinného domu se zahradou na jižní Moravě. Cílem projektu je ukázat, jak může dům vypadat ještě před stavbou, aby měl investor lepší představu o tom, co ho čeká. Na webu si ho můžete projít ve 3D, prohlédnout si, jak do místností během dne dopadá slunce, a spočítat energetickou náročnost domu nebo očekávanou výrobu fotovoltaiky.",
     highlights: [
       {
-        title: "Všechno vychází z jedněch dat",
+        title: "Jeden model, více výstupů",
         text: "Změním okno v modelu a změna se promítne do půdorysu, 3D modelu, renderů i rozpočtu. Každá část tak odpovídá stejnému návrhu.",
       },
       {
