@@ -73,4 +73,47 @@ export const projects: Project[] = [
       github: "https://github.com/filiptomanec/house-sample",
     },
   },
+  {
+    slug: "investio",
+    title: "Investio",
+    category: "Web · finance · grafy",
+    year: "2026",
+    description:
+      "Investio je sada tří finančních kalkulaček pro web a mobil. Spočítáte si, kolik můžete mít za pár let naspořeno, kolik měsíčně odkládat na budoucí rentu nebo jestli se při hypotéce víc vyplatí splácet rychleji, nebo investovat. Výpočty zohledňují inflaci a probíhají přímo ve vašem zařízení, takže zadaná čísla nikam neodesíláte.",
+    highlights: [
+      {
+        title: "Výsledek se mění s každým posunem",
+        text: "Posuňte hodnotu nebo zadejte přesné číslo a výsledek se hned přepočítá. Grafy se plynule mění a hlavní částku máte na očích i na telefonu.",
+      },
+      {
+        title: "Inflace podle skutečných dat",
+        text: "Průměrnou inflaci v ČR načtete jedním tlačítkem z dat Světové banky. Hned uvidíte, jakou hodnotu budou mít vaše peníze v dnešních cenách.",
+      },
+      {
+        title: "Doplácet hypotéku, nebo investovat?",
+        text: "Porovnejte tři způsoby, jak naložit s penězi navíc. Kalkulačka ukáže, která strategie vychází lépe a kdy hodnota investic dorovná zbývající dluh.",
+      },
+      {
+        title: "Výpočty pokryté testy",
+        text: "Všechny výpočty jsou v samostatném balíčku pokrytém testy, odděleně od vzhledu aplikace. Aplikace nabízí češtinu i angličtinu a světlý i tmavý režim.",
+      },
+    ],
+    stack: [
+      "React",
+      "TypeScript",
+      "TanStack Start",
+      "Tailwind CSS",
+      "Recharts",
+      "Vitest",
+      "Vercel",
+    ],
+    image: {
+      src: "/assets/projects/investio.webp",
+      alt: "Investiční kalkulačka Investio v tmavém režimu. Vlevo jsou posuvníky pro vklady, úrok a dobu investování, vpravo výsledek 2 924 650 Kč za 20 let, přehled vkladů a výnosu a sloupcový graf růstu úspor po jednotlivých letech.",
+    },
+    links: {
+      live: "https://investio.filiptomanec.cz",
+      github: "https://github.com/filiptomanec/investio",
+    },
+  },
 ];
