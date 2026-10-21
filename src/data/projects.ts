@@ -119,26 +119,26 @@ export const projects: Project[] = [
   {
     slug: "vzduch-doma",
     title: "Vzduch doma",
-    category: "IoT · web · PWA",
+    category: "IoT · WEB · PWA",
     year: "2026",
     description:
-      "Vzduch doma hlídá kvalitu vzduchu v mém obýváku. Vlastní zařízení s čipem ESP32 a senzorem Sensirion SCD30 měří každé tři minuty oxid uhličitý, teplotu a vlhkost a posílá je přes Wi-Fi na server. Aplikace pak ukáže, jestli je čas vyvětrat, odhadne, kdy vzduch překročí doporučenou hranici, a pošle upozornění na telefon. Bez přihlášení uvidíte živou ukázku se simulovanými daty.",
+      "Vzduch doma hlídá, kdy je v mém obýváku čas vyvětrat. Vlastní zařízení se senzorem měří každé tři minuty množství CO₂, teplotu a vlhkost a posílá naměřené hodnoty přes Wi-Fi do aplikace. Ta sleduje vývoj CO₂, odhaduje, kdy překročí nastavenou hranici, a může poslat upozornění na telefon. Bez přihlášení si můžete vyzkoušet simulovaný byt s vymyšlenými daty.",
     highlights: [
       {
         title: "Od senzoru až na obrazovku",
-        text: "Celý řetězec je můj: ESP32 se senzorem SCD30 posílá měření do API, data se ukládají do databáze Postgres a aplikace je zobrazuje v reálném čase.",
+        text: "Zařízení s čipem ESP32 a senzorem SCD30 posílá měření na server, kde se ukládají do databáze Postgres. Celý systém od vlastního hardwaru až po webovou aplikaci jsem postavil sám.",
       },
       {
         title: "Poradí, kdy otevřít okno",
-        text: "Z průběhu CO₂ aplikace spočítá trend a odhadne, za jak dlouho překročí 1 000 ppm. Pozná také, kdy se naposledy větralo.",
+        text: "Podle vývoje CO₂ odhadne, za kolik minut překročí 1 000 ppm. Zároveň sama rozpozná, kdy se naposledy větralo.",
       },
       {
         title: "Upozornění přímo na telefon",
-        text: "Aplikaci si přidáte na plochu telefonu jako PWA. Jakmile CO₂ překročí nastavený limit, přijde push notifikace.",
+        text: "Aplikaci si přidáte na plochu telefonu a nastavíte vlastní limit CO₂. Když ho hodnoty překročí, přijde vám push notifikace.",
       },
       {
         title: "Živá ukázka pro návštěvníky",
-        text: "Moje data jsou za heslem. Ostatní uvidí simulovaný byt, ve kterém čas běží 72× rychleji, takže je vidět, jak se vzduch během dne mění.",
+        text: "Moje skutečná data jsou chráněná heslem. V ukázce běží čas 72× rychleji, takže během chvilky uvidíte, jak CO₂ stoupá a jak rychle klesne po vyvětrání.",
       },
     ],
     stack: [
@@ -154,7 +154,7 @@ export const projects: Project[] = [
     ],
     image: {
       src: "/assets/projects/vzduch-doma.webp",
-      alt: "Aplikace Vzduch doma v tmavém režimu. Uprostřed je prstenec s hodnotou CO₂ 691 ppm a štítkem Výborný, pod ním nápis Vzduch je svěží. Vpravo jsou karty s teplotou 21,2 °C a vlhkostí 50 % s malými grafy za posledních 24 hodin.",
+      alt: "Aplikace Vzduch doma v tmavém režimu. Uprostřed je barevný prstenec s hodnotou CO₂ 691 ppm a hodnocením „Výborný“, pod ním text „Vzduch je svěží“. Vpravo jsou karty s teplotou 21,2 °C a vlhkostí 50 %, každá s grafem za posledních 24 hodin.",
     },
     links: {
       live: "https://air.filiptomanec.cz",
