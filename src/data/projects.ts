@@ -31,10 +31,10 @@ export const projects: Project[] = [
   {
     slug: "dum-pod-orechem",
     title: "Dům pod ořechem",
-    category: "Web · 3D · výpočty",
+    category: "Web · 3D · výpočty · vizualizace",
     year: "2026",
     description:
-      "Dům pod ořechem je návrh fiktivního přízemního rodinného domu se zahradou na jižní Moravě. Všechno vychází z jednoho souboru dat, ze kterého se automaticky vytváří půdorys, 3D model, rendery i výpočty. Když v datech změním třeba okno, promítne se změna do všech částí projektu. Na webu si můžete dům prohlédnout ve 3D, prozkoumat jeho vlastnosti a spočítat třeba oslunění místností nebo náklady na stavbu.",
+      "Dům pod ořechem je návrh fiktivního přízemního rodinného domu se zahradou na jižní Moravě. Cílem projektu je ukázat, jak může dům vypadat ještě před stavbou, aby měl investor lepší představu o tom, co ho čeká. Na webu si ho můžete projít ve 3D, prohlédnout si, jak do místností během dne dopadá slunce, a spočítat energetickou náročnost domu nebo očekávanou výrobu fotovoltaiky.",
     highlights: [
       {
         title: "Všechno vychází z jedněch dat",
