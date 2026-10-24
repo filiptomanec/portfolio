@@ -5,14 +5,9 @@ import { motion } from "framer-motion";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
 import type { Project } from "@/data/projects";
+import ProjectDetails from "@/components/projects/ProjectDetails";
+import { focusRing, nbsp } from "@/components/projects/shared";
 import { cn } from "@/lib/utils";
-
-/** Česká typografie: jednopísmenné předložky a spojky nenechá na konci řádku. */
-const nbsp = (text: string) =>
-  text.replace(/(?<=^|[\s(])([aikosuvzAIKOSUVZ])\s+/g, "$1\u00a0");
-
-const focusRing =
-  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-primary";
 
 interface IProjectCardProps {
   project: Project;
@@ -37,7 +32,7 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="group relative flex flex-col gap-10 xl:gap-12"
+      className="group relative"
     >
       {/* horní řádek: náhled + úvod (u sudých projektů prohozené strany) */}
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:grid-cols-12 xl:gap-[60px]">
@@ -163,70 +158,27 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
                 </span>
               </a>
             )}
+            <ProjectDetails project={project} num={num} />
+            {/* vedle dvou tlačítek s textem se GitHub vejde jen jako ikona */}
             {live && github && (
               <a
                 href={github}
                 target="_blank"
                 rel="noopener noreferrer"
+                title="Zdrojový kód na GitHubu"
                 className={cn(
-                  "relative z-[2] inline-flex h-[48px] items-center gap-2 rounded-full border border-white/20 px-6 font-semibold text-white transition-colors hover:border-accent hover:text-accent",
+                  "relative z-[2] inline-flex h-[48px] w-[48px] items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-accent hover:text-accent",
                   focusRing,
                 )}
               >
-                <BsGithub aria-hidden="true" className="text-lg" />
-                GitHub
+                <BsGithub aria-hidden="true" className="text-xl" />
                 <span className="sr-only">
-                  {" "}
-                  – zdrojový kód projektu {project.title} (otevře se v nové
-                  záložce)
+                  Zdrojový kód projektu {project.title} na GitHubu (otevře se
+                  v nové záložce)
                 </span>
               </a>
             )}
           </div>
-        </div>
-      </div>
-
-      {/* spodní řádek: technické body + stack */}
-      <div className="grid grid-cols-1 gap-8 border-t border-white/20 pt-10 xl:grid-cols-12 xl:gap-[60px]">
-        <div className="flex flex-col gap-4 xl:col-span-8">
-          <h3 className="text-sm uppercase tracking-[2px] text-white/60">
-            Co je na tom zajímavé
-          </h3>
-          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {project.highlights.map((item) => (
-              <li
-                key={item.title}
-                className="flex flex-col gap-2 rounded-xl bg-[#232329] p-6 md:[&:last-child:nth-child(odd)]:col-span-2 transition-colors duration-500 group-hover:bg-[#27272c]"
-              >
-                <h4 className="flex items-start gap-3 font-semibold leading-snug text-white">
-                  {/* tečka zarovnaná na střed prvního řádku (leading-snug = 1.375em) */}
-                  <span
-                    aria-hidden="true"
-                    className="mt-[calc(0.6875em-3px)] h-[6px] w-[6px] shrink-0 rounded-full bg-accent"
-                  />
-                  {nbsp(item.title)}
-                </h4>
-                <p className="text-[15px] leading-relaxed text-white/70">
-                  {nbsp(item.text)}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex flex-col gap-4 xl:col-span-4">
-          <h3 className="text-sm uppercase tracking-[2px] text-white/60">
-            Použité technologie
-          </h3>
-          <ul className="flex flex-wrap gap-2">
-            {project.stack.map((tech) => (
-              <li
-                key={tech}
-                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs leading-normal text-white/80"
-              >
-                {tech}
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </motion.article>

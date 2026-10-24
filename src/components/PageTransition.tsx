@@ -15,7 +15,7 @@ const PageTransition = ({ children }: Readonly<{ children: ReactNode }>) => {
             opacity: 0,
             transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
           }}
-          className="h-screen w-screen fixed bg-primary top-0 pointer-events-none"
+          className="fixed inset-x-0 top-0 h-[120lvh] bg-primary pointer-events-none"
         />
         {children}
       </div>
