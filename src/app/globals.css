@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+    /* tmavé i pod stránkou (přetažení na iPhonu, okraje lišt Safari) */
+    html {
+        @apply bg-primary;
+    }
+
     body {
         @apply font-primary bg-primary text-white leading-loose;
     }
