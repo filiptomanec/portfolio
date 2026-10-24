@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { ReactNode, useState } from "react";
 
-// Po doběhnutí zmizí ze stránky, jinak by podle ní Safari 26 barvil své lišty.
+// Absolutní, ne fixní, a po doběhnutí zmizí – viz komentář ve StairTransition.
 const Cover = () => {
   const [done, setDone] = useState(false);
   if (done) return null;
@@ -17,7 +17,7 @@ const Cover = () => {
         transition: { delay: 1, duration: 0.4, ease: "easeInOut" },
       }}
       onAnimationComplete={() => setDone(true)}
-      className="fixed inset-0 bg-primary/[0.99] pointer-events-none"
+      className="pointer-events-none absolute inset-x-0 top-0 h-[100lvh] bg-primary"
     />
   );
 };

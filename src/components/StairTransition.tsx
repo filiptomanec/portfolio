@@ -6,16 +6,15 @@ import { usePathname } from "next/navigation"; // components
 import Stairs from "./Stairs";
 
 /*
-  Safari 26 na iPhonu ořízne úplně neprůhledné fixní vrstvy nad plovoucí lištou
-  s adresou, proto krytí 99 %. Zároveň si z fixních vrstev u okrajů bere barvu
-  svých lišt, takže po doběhnutí animace vrstvy ze stránky úplně mizí.
-
-  Aby lišty během animace nezbělaly od schodů, leží nad nimi u horního a spodního
-  okraje úzké pruhy v barvě stránky (Safari čte fixní prvky do ~4 px od okraje,
-  široké aspoň 80 %). Do obrazovky zasahují jen 4 px pod stavovým řádkem a lištou.
+  Vrstvy přechodu jsou záměrně `absolute`, ne `fixed`. Safari 26 na iPhonu
+  barví stavový řádek a lištu s adresou podle fixních vrstev u okrajů obrazovky,
+  takže bílé schody a mizející závoj by lišty přebarvovaly podle toho, v jaké
+  fázi animace je zrovna zachytí. Neprůhledné fixní vrstvy navíc ořízne nad
+  lištou s adresou. Absolutní vrstva nahoře dokumentu (po načtení i navigaci
+  je stránka nahoře) pokryje celou obrazovku včetně místa pod lištou (100lvh)
+  a lišty zůstanou v barvě pozadí stránky. Po doběhnutí animace vrstvy mizí.
 */
-const toolbarTint =
-  "fixed inset-x-0 z-[41] h-3 bg-primary/[0.99] pointer-events-none";
+const layer = "pointer-events-none absolute inset-x-0 top-0 h-[100lvh]";
 
 const Transition = () => {
   const [done, setDone] = useState(false);
@@ -23,14 +22,12 @@ const Transition = () => {
 
   return (
     <div>
-      <div className="fixed inset-0 pointer-events-none z-40 flex">
+      <div className={`${layer} z-40 flex overflow-hidden`}>
         <Stairs />
       </div>
-      <div aria-hidden="true" className={`${toolbarTint} -top-2`} />
-      <div aria-hidden="true" className={`${toolbarTint} -bottom-2`} />
 
       <motion.div
-        className="fixed inset-0 bg-primary/[0.99] pointer-events-none"
+        className={`${layer} bg-primary`}
         initial={{ opacity: 1 }}
         animate={{
           opacity: 0,
