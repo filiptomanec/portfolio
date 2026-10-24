@@ -10,6 +10,9 @@
 
     body {
         @apply font-primary bg-primary text-white leading-loose;
+        /* na šířku nesmí obsah vjet pod výřez displeje (viewport-fit=cover) */
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
     }
 
     .h1 {

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import { ReactNode } from "react";
 import "./globals.css";
@@ -14,6 +14,14 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-jetbrainsMono",
 });
+
+// viewport-fit=cover: stránka kreslí i pod stavový řádek iPhonu, takže přechodová
+// animace sahá až nahoru. Obsah u okrajů odsazují env(safe-area-inset-*).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "Filip Tomanec - Software Developer",
