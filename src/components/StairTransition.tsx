@@ -10,13 +10,13 @@ const StairTransition = () => {
     <>
       <AnimatePresence mode="wait">
         <div key={pathname}>
-          {/* 120lvh: Safari na iPhonu kreslí stránku i pod plovoucí lištou s adresou, kam 100vh nesahá */}
-          <div className="fixed inset-x-0 top-0 h-[120lvh] pointer-events-none z-40 flex">
+          {/* Safari 26 na iPhonu ořízne úplně neprůhledné fixní vrstvy nad plovoucí lištou s adresou, proto krytí 99 % */}
+          <div className="fixed inset-0 pointer-events-none z-40 flex">
             <Stairs />
           </div>
 
           <motion.div
-            className="fixed inset-x-0 top-0 h-[120lvh] bg-primary pointer-events-none"
+            className="fixed inset-0 bg-primary/[0.99] pointer-events-none"
             initial={{ opacity: 1 }}
             animate={{
               opacity: 0,
