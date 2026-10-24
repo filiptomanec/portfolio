@@ -30,7 +30,7 @@ const SheetOverlay = ({className, ...props}: ISheetOverlay) => (
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
-    "fixed z-50 gap-4 bg-primary/[0.99] p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 dark:bg-slate-950",
+    "fixed z-50 gap-4 bg-primary p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 dark:bg-slate-950",
     {
         variants: {
             side: {
@@ -61,7 +61,7 @@ const SheetContent =
                 {...props}
             >
                 {children}
-                <SheetPrimitive.Close className="absolute right-8 top-[calc(2rem+env(safe-area-inset-top))] transition-opacity outline-none">
+                <SheetPrimitive.Close className="absolute right-8 top-8 transition-opacity outline-none">
                     <IoMdClose className="text-3xl text-accent"/>
                     <span className="sr-only">Close</span>
                 </SheetPrimitive.Close>
