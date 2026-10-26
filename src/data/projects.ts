@@ -34,7 +34,7 @@ export const projects: Project[] = [
     category: "Web · mapy · data",
     year: "2026",
     description:
-      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší a možnosti dojíždění. Vše shrnuje skóre od 0 do 100 s konkrétními důvody, které si můžete uložit do PDF.",
+      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší, kriminalitu v okolí nebo místo ve 3D se stíny podle denní doby. Vše shrnuje skóre od 0 do 100 s konkrétními důvody a krátkým AI shrnutím. Až tři místa můžete porovnat vedle sebe a výsledek si uložit do PDF.",
     highlights: [
       {
         title: "Dojezdové zóny a trasy",
@@ -42,20 +42,21 @@ export const projects: Project[] = [
       },
       {
         title: "Rizika a ovzduší z veřejných dat",
-        text: "Záplavy, hluk, radon, poddolování, sesuvy a průměrné znečištění ovzduší za pět let. Údaje načítám přímo od státních institucí, například VÚV, ČHMÚ a České geologické služby.",
+        text: "Záplavy, hluk, radon, poddolování, sesuvy, kriminalita a průměrné znečištění ovzduší za pět let. Údaje načítám přímo od státních institucí, například VÚV, ČHMÚ, České geologické služby a Policie ČR.",
       },
       {
-        title: "Terén, zeleň a katastr",
-        text: "Zobrazuji sklon a orientaci svahu, výškový profil, podíl zeleně v okolí i údaje o parcele. Přidávám také odhad roční výroby elektřiny z fotovoltaiky.",
+        title: "Terén, katastr a 3D",
+        text: "Zobrazuji sklon svahu, výškový profil, údaje o parcele a stavbě, bonitu půdy i odhad poplatku za vynětí ze zemědělského půdního fondu. Ve 3D pohledu uvidíte terén s budovami a stíny podle roční doby a hodiny.",
       },
       {
-        title: "Skóre s konkrétními důvody",
-        text: "Každá kategorie má vlastní body a vysvětlení, třeba „Obchod 2 min pěšky“ nebo „Hluk 70–75 dB“. Výpočty běží přes vlastní server s mezipamětí, který hlídá počet dotazů na služby Esri.",
+        title: "Skóre s důvody a AI shrnutím",
+        text: "Každá kategorie má vlastní body a vysvětlení, třeba „Obchod 2 min pěšky“ nebo „Hluk 70–75 dB“. AI z výsledků napíše krátké shrnutí a kontroluje se, že nepřidá čísla, která v datech nejsou. Výpočty běží přes vlastní server s mezipamětí, který šetří bezplatné limity služeb.",
       },
     ],
     stack: [
       "ArcGIS Maps SDK for JavaScript",
       "Esri routing",
+      "Gemini API",
       "Next.js",
       "React",
       "TypeScript",
