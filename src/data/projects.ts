@@ -65,8 +65,8 @@ export const projects: Project[] = [
       "Vercel",
     ],
     image: {
-      src: "/assets/projects/nadhled.webp",
-      alt: "Aplikace Nadhled nad leteckou mapou Hlučína. Vlevo je karta místa se skóre 93 ze 100 a hodnocením „Výborné místo k bydlení“. Otevřená záložka Dostupnost zobrazuje režim Pěšky a zóny dostupnosti za 5, 10 a 15 minut. V mapě jsou kolem špendlíku na náměstí vyznačené fialové zóny.",
+      src: "/assets/projects/nadhled-v2.webp",
+      alt: "Aplikace Nadhled nad leteckou mapou Hlučína. Vlevo je karta místa se skóre 87 ze 100 a hodnocením „Výborné místo k bydlení“. Otevřená záložka Dostupnost zobrazuje režim Pěšky a zóny dostupnosti za 5, 10 a 15 minut. V mapě jsou kolem špendlíku na náměstí vyznačené fialové zóny.",
     },
     links: {
       live: "https://nadhled.filiptomanec.cz",
