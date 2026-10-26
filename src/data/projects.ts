@@ -34,15 +34,15 @@ export const projects: Project[] = [
     category: "Web · mapy · data",
     year: "2026",
     description:
-      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň a možnosti dojíždění. Vše shrnuje skóre od 0 do 100 s konkrétními důvody, které si můžete uložit do PDF.",
+      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší a možnosti dojíždění. Vše shrnuje skóre od 0 do 100 s konkrétními důvody, které si můžete uložit do PDF.",
     highlights: [
       {
         title: "Dojezdové zóny a trasy",
         text: "Zóny dostupnosti počítá síťová analýza Esri podle skutečných cest, ne vzdušnou čarou. Aplikace spočítá i dojíždění až čtyř členů domácnosti včetně typického provozu v danou hodinu.",
       },
       {
-        title: "Rizika z veřejných dat",
-        text: "Záplavy, hluk ze silnic a železnic, radon, poddolování a sesuvy. Údaje načítám přímo z veřejných služeb státních institucí, například VÚV a České geologické služby.",
+        title: "Rizika a ovzduší z veřejných dat",
+        text: "Záplavy, hluk, radon, poddolování, sesuvy a průměrné znečištění ovzduší za pět let. Údaje načítám přímo od státních institucí, například VÚV, ČHMÚ a České geologické služby.",
       },
       {
         title: "Terén, zeleň a katastr",
