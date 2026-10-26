@@ -29,6 +29,50 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "nadhled",
+    title: "Nadhled",
+    category: "Web · mapy · data",
+    year: "2026",
+    description:
+      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň a možnosti dojíždění. Vše shrnuje skóre od 0 do 100 s konkrétními důvody, které si můžete uložit do PDF.",
+    highlights: [
+      {
+        title: "Dojezdové zóny a trasy",
+        text: "Zóny dostupnosti počítá síťová analýza Esri podle skutečných cest, ne vzdušnou čarou. Aplikace spočítá i dojíždění až čtyř členů domácnosti včetně typického provozu v danou hodinu.",
+      },
+      {
+        title: "Rizika z veřejných dat",
+        text: "Záplavy, hluk ze silnic a železnic, radon, poddolování a sesuvy. Údaje načítám přímo z veřejných služeb státních institucí, například VÚV a České geologické služby.",
+      },
+      {
+        title: "Terén, zeleň a katastr",
+        text: "Zobrazuji sklon a orientaci svahu, výškový profil, podíl zeleně v okolí i údaje o parcele. Přidávám také odhad roční výroby elektřiny z fotovoltaiky.",
+      },
+      {
+        title: "Skóre s konkrétními důvody",
+        text: "Každá kategorie má vlastní body a vysvětlení, třeba „Obchod 2 min pěšky“ nebo „Hluk 70–75 dB“. Výpočty běží přes vlastní server s mezipamětí, který hlídá počet dotazů na služby Esri.",
+      },
+    ],
+    stack: [
+      "ArcGIS Maps SDK for JavaScript",
+      "Esri routing",
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Motion",
+      "Vitest",
+      "Vercel",
+    ],
+    image: {
+      src: "/assets/projects/nadhled.webp",
+      alt: "Aplikace Nadhled nad leteckou mapou Hlučína. Vlevo je karta místa se skóre 93 ze 100 a hodnocením „Výborné místo k bydlení“. Otevřená záložka Dostupnost zobrazuje režim Pěšky a zóny dostupnosti za 5, 10 a 15 minut. V mapě jsou kolem špendlíku na náměstí vyznačené fialové zóny.",
+    },
+    links: {
+      live: "https://nadhled.filiptomanec.cz",
+    },
+  },
+  {
     slug: "dum-pod-orechem",
     title: "Dům pod ořechem",
     category: "Web · 3D · výpočty · vizualizace",
