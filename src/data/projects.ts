@@ -112,7 +112,7 @@ export const projects: Project[] = [
       alt: "Úvodní stránka webu Dům pod ořechem s nadpisem a tlačítkem 3D prohlídky. Denní render fiktivního přízemního domu s fotovoltaikou na střeše, terasou a bazénem.",
     },
     links: {
-      live: "https://house-sample.filiptomanec.cz",
+      live: "https://house.filiptomanec.cz",
       github: "https://github.com/filiptomanec/house-sample",
     },
   },
