@@ -38,15 +38,15 @@ export const projects: Project[] = [
     highlights: [
       {
         title: "Dojezdové zóny a trasy",
-        text: "Zóny dostupnosti počítá síťová analýza Esri podle skutečných cest, ne vzdušnou čarou. Aplikace spočítá i dojíždění až čtyř členů domácnosti včetně typického provozu v danou hodinu.",
+        text: "Zóny dostupnosti počítá síťová analýza Esri podle skutečných cest, ne vzdušnou čarou. Aplikace spočítá i dojíždění až čtyř členů domácnosti včetně typického provozu v danou hodinu a ukáže, kolik hodin a peněz za palivo to stojí za měsíc i za rok. Školy a praktické lékaře beru z oficiálních registrů MŠMT a ÚZIS, takže nechybí ani v malých obcích.",
       },
       {
         title: "Rizika a ovzduší z veřejných dat",
-        text: "Záplavy, hluk u fasád domu včetně tiché strany, radon, poddolování, sesuvy, kriminalita, průmysl nebo skládky v okolí a průměrné znečištění ovzduší za pět let. Údaje načítám přímo od státních institucí, například VÚV, ČHMÚ, ČÚZK, České geologické služby a Policie ČR.",
+        text: "Záplavy, hluk u fasád domu včetně tiché strany, radon, poddolování, sesuvy, kriminalita, průmysl nebo skládky v okolí, střelnice, větrné elektrárny a letiště a průměrné znečištění ovzduší za pět let. Údaje načítám přímo od státních institucí, například VÚV, ČHMÚ, ČÚZK, České geologické služby a Policie ČR.",
       },
       {
         title: "Terén, katastr a 3D",
-        text: "Zobrazuji sklon svahu, výškový profil, údaje o parcele a stavbě, bonitu půdy i odhad poplatku za vynětí ze zemědělského půdního fondu. Ve 3D pohledu uvidíte terén s budovami a stíny podle roční doby a hodiny.",
+        text: "Zobrazuji sklon svahu, výškový profil, údaje o parcele a stavbě, památkovou ochranu, bonitu půdy i odhad poplatku za vynětí ze zemědělského půdního fondu. Ve 3D pohledu uvidíte terén s budovami a stíny podle roční doby a hodiny.",
       },
       {
         title: "Skóre s důvody a AI shrnutím",
