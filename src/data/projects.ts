@@ -25,16 +25,25 @@ export type Project = {
   };
   /** Aspoň jeden odkaz. Bez živé ukázky (např. hardware) je hlavním odkazem GitHub. */
   links: { live: string; github?: string } | { live?: undefined; github: string };
+  /**
+   * Mobilní verze téhož projektu: telefon přes roh náhledu a tlačítko App Store.
+   * Snímek obrazovky iPhonu (WebP, šířka ~600 px, poměr 1320 : 2868).
+   */
+  mobile?: {
+    image: { src: string; alt: string };
+    /** Odkaz do App Storu; dokud chybí, tlačítko ukazuje „Připravuji“. */
+    appStore?: string;
+  };
 };
 
 export const projects: Project[] = [
   {
     slug: "nadhled",
     title: "Nadhled",
-    category: "Web · mapy · data",
+    category: "Web · iOS · mapy · data",
     year: "2026",
     description:
-      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší, kriminalitu v okolí nebo místo ve 3D se stíny podle denní doby. Vše shrnuje skóre od 0 do 100 s konkrétními důvody a krátkým AI shrnutím. Až tři místa můžete porovnat vedle sebe a výsledek si uložit do PDF.",
+      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší, kriminalitu v okolí nebo místo ve 3D se stíny podle denní doby. Vše shrnuje skóre od 0 do 100 s konkrétními důvody a krátkým AI shrnutím. Až tři místa můžete porovnat vedle sebe a výsledek si uložit do PDF. Na webu i jako aplikace pro iPhone.",
     highlights: [
       {
         title: "Dojezdové zóny a trasy",
@@ -59,6 +68,8 @@ export const projects: Project[] = [
       "Groq API",
       "Next.js",
       "React",
+      "React Native",
+      "Expo",
       "TypeScript",
       "Tailwind CSS",
       "Motion",
@@ -71,6 +82,12 @@ export const projects: Project[] = [
     },
     links: {
       live: "https://www.nadhled-lokalit.cz",
+    },
+    mobile: {
+      image: {
+        src: "/assets/projects/nadhled-ios-vybavenost.webp",
+        alt: "Mobilní aplikace Nadhled na iPhonu. V letecké mapě Hlučína jsou barevné body vybavenosti, pod ní karta místa se skóre 85 a otevřená záložka Vybavenost se seznamem škol, školek, obchodů a lékařů včetně vzdálenosti pěšky.",
+      },
     },
   },
   {

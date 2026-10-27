@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 
 import type { Project } from "@/data/projects";
+import AppStoreButton from "@/components/projects/AppStoreButton";
 import ProjectDetails from "@/components/projects/ProjectDetails";
 import { focusRing, nbsp } from "@/components/projects/shared";
 import { cn } from "@/lib/utils";
@@ -17,6 +18,7 @@ interface IProjectCardProps {
 const ProjectCard = ({ project, index }: IProjectCardProps) => {
   const num = String(index + 1).padStart(2, "0");
   const { live, github } = project.links;
+  const { mobile } = project;
   const host = live && new URL(live).host;
   // Bez živé ukázky (např. hardware) přebírá roli hlavního odkazu GitHub.
   const githubIsPrimary = !live;
@@ -37,7 +39,14 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
       {/* horní řádek: náhled + úvod (u sudých projektů prohozené strany) */}
       <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-12 xl:grid-cols-12 xl:gap-[60px]">
         {/* náhled */}
-        <div className={cn("relative xl:col-span-7", reversed && "lg:order-2")}>
+        <div
+          className={cn(
+            "relative xl:col-span-7",
+            reversed && "lg:order-2",
+            // místo pro telefon přesahující přes pravý dolní roh prohlížeče
+            mobile && "pb-9 pr-9 sm:pb-12 sm:pr-16",
+          )}
+        >
           {/* mátový glow při hoveru / fokusu */}
           <div
             aria-hidden="true"
@@ -73,13 +82,33 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
               />
               <span
                 aria-hidden="true"
-                className="absolute bottom-4 right-4 hidden items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold leading-none text-primary opacity-0 transition-all duration-500 group-hover:opacity-100 motion-safe:translate-y-2 motion-safe:group-hover:translate-y-0 sm:flex"
+                className={cn(
+                  "absolute bottom-4 hidden items-center gap-2 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold leading-none text-primary opacity-0 transition-all duration-500 group-hover:opacity-100 motion-safe:translate-y-2 motion-safe:group-hover:translate-y-0 sm:flex",
+                  // vpravo by ho zakryl telefon
+                  mobile ? "left-4" : "right-4",
+                )}
               >
                 {githubIsPrimary ? "Zobrazit kód" : "Otevřít web"}{" "}
                 <BsArrowUpRight />
               </span>
             </div>
           </div>
+
+          {/* mobilní verze: iPhone přes pravý dolní roh, tenký rámeček */}
+          {mobile && (
+            <div className="absolute bottom-0 right-0 w-[100px] rounded-[19px] border border-white/20 bg-[#0b0b0e] p-[2px] shadow-[0_28px_60px_rgba(0,0,0,0.6)] ring-2 ring-primary transition-transform duration-700 ease-out motion-safe:group-hover:-translate-y-1.5 sm:w-[140px] sm:rounded-[26px] sm:p-[2.5px] sm:ring-[3px] lg:w-[120px] xl:w-[164px] xl:rounded-[30px]">
+              <div className="relative aspect-[1320/2868] overflow-hidden rounded-[17px] sm:rounded-[23px] xl:rounded-[27px]">
+                <Image
+                  src={mobile.image.src}
+                  alt={mobile.image.alt}
+                  fill
+                  priority={index === 0}
+                  sizes="(min-width: 1200px) 160px, (min-width: 960px) 116px, (min-width: 640px) 135px, 96px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
         {/* úvod */}
@@ -159,6 +188,9 @@ const ProjectCard = ({ project, index }: IProjectCardProps) => {
               </a>
             )}
             <ProjectDetails project={project} num={num} />
+            {mobile && (
+              <AppStoreButton title={project.title} href={mobile.appStore} />
+            )}
             {/* vedle dvou tlačítek s textem se GitHub vejde jen jako ikona */}
             {live && github && (
               <a

@@ -12,6 +12,7 @@ import { BsArrowUpRight, BsGithub, BsPlusLg } from "react-icons/bs";
 import { IoMdClose } from "react-icons/io";
 
 import type { Project } from "@/data/projects";
+import AppStoreButton from "@/components/projects/AppStoreButton";
 import { focusRing, nbsp } from "@/components/projects/shared";
 import { cn } from "@/lib/utils";
 
@@ -205,6 +206,12 @@ const ProjectDetails = ({ project, num }: IProjectDetailsProps) => {
                       {live ? "GitHub" : "Zdrojový kód"}
                       <span className="sr-only"> (otevře se v nové záložce)</span>
                     </a>
+                  )}
+                  {project.mobile && (
+                    <AppStoreButton
+                      title={project.title}
+                      href={project.mobile.appStore}
+                    />
                   )}
                 </div>
                 </motion.div>
