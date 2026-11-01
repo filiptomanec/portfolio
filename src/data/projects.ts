@@ -43,7 +43,7 @@ export const projects: Project[] = [
     category: "Web · iOS · mapy · data",
     year: "2026",
     description:
-      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší, kriminalitu v okolí nebo místo ve 3D se stíny podle denní doby. Vše shrnuje skóre od 0 do 100 s konkrétními důvody a krátkým AI shrnutím. Až tři místa můžete porovnat vedle sebe a výsledek si uložit do PDF. Na webu i jako aplikace pro iPhone.",
+      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší, kriminalitu v okolí nebo místo ve 3D se stíny podle denní doby. Vše shrnuje skóre od 0 do 100 s konkrétními důvody a krátkým AI shrnutím. Až tři místa můžete porovnat vedle sebe a výsledek si uložit do PDF. Funguje na webu i jako aplikace pro iPhone, která navíc najde místo podle vaší polohy, ukládá oblíbená místa a umí tmavý režim.",
     highlights: [
       {
         title: "Dojezdové zóny a trasy",
@@ -85,9 +85,10 @@ export const projects: Project[] = [
     },
     mobile: {
       image: {
-        src: "/assets/projects/nadhled-ios-vybavenost.webp",
-        alt: "Mobilní aplikace Nadhled na iPhonu. V letecké mapě Hlučína jsou barevné body vybavenosti, pod ní karta místa se skóre 85 a otevřená záložka Vybavenost se seznamem škol, školek, obchodů a lékařů včetně vzdálenosti pěšky.",
+        src: "/assets/projects/nadhled-ios-1-1.webp",
+        alt: "Mobilní aplikace Nadhled na iPhonu. V letecké mapě Hlučína jsou barevné body vybavenosti, pod ní karta místa se skóre 85, tlačítkem pro uložení místa a otevřenou záložkou Vybavenost se seznamem škol, školek, obchodů a lékařů včetně vzdálenosti pěšky.",
       },
+      appStore: "https://apps.apple.com/cz/app/nadhled/id6827641875",
     },
   },
   {
