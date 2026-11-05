@@ -43,7 +43,7 @@ export const projects: Project[] = [
     category: "Web · iOS · mapy · data",
     year: "2026",
     description:
-      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší, kriminalitu v okolí nebo místo ve 3D se stíny podle denní doby. Vše shrnuje skóre od 0 do 100 s konkrétními důvody a krátkým AI shrnutím. Až tři místa můžete porovnat vedle sebe a výsledek si uložit do PDF. Funguje na webu i jako aplikace pro iPhone, která navíc najde místo podle vaší polohy, ukládá oblíbená místa a umí tmavý režim.",
+      "Nadhled vám pomůže poznat místo v Česku dřív, než si tam koupíte pozemek nebo dům. Stačí zadat adresu nebo kliknout do mapy a zjistíte, jak daleko to máte do práce, co je v okolí a jaká rizika nebo omezení se s místem pojí. Uvidíte také terén, zeleň, čistotu ovzduší, kriminalitu v okolí, územní plán obce v barvách nebo místo ve 3D se stíny podle denní doby. Vše shrnuje skóre od 0 do 100 s konkrétními důvody a krátkým AI shrnutím. Až tři místa můžete porovnat vedle sebe a výsledek si uložit do PDF. Funguje na webu i jako aplikace pro iPhone, která navíc najde místo podle vaší polohy, ukládá oblíbená místa a umí tmavý režim.",
     highlights: [
       {
         title: "Dojezdové zóny a trasy",
@@ -54,8 +54,8 @@ export const projects: Project[] = [
         text: "Záplavy, hluk u fasád domu včetně tiché strany, radon, poddolování, sesuvy, kriminalita, průmysl nebo skládky v okolí, střelnice, větrné elektrárny a letiště a průměrné znečištění ovzduší za pět let. Údaje načítám přímo od státních institucí, například VÚV, ČHMÚ, ČÚZK, České geologické služby a Policie ČR.",
       },
       {
-        title: "Terén, katastr a 3D",
-        text: "Zobrazuji sklon svahu, výškový profil, údaje o parcele a stavbě, památkovou ochranu, bonitu půdy i odhad poplatku za vynětí ze zemědělského půdního fondu. Ve 3D pohledu uvidíte terén s budovami a stíny podle roční doby a hodiny.",
+        title: "Terén, katastr, územní plán a 3D",
+        text: "Zobrazuji sklon svahu, výškový profil, údaje o parcele a stavbě, památkovou ochranu, bonitu půdy i odhad poplatku za vynětí ze zemědělského půdního fondu. Územní plán obce ukážu v mapě v barvách ploch a vysvětlím, co plocha v místě znamená: data v jednotném standardu stahuje jednou měsíčně skript z Národního geoportálu územního plánování, aplikace tak nezávisí na desítkách krajských serverů. Ve 3D pohledu uvidíte terén s budovami a stíny podle roční doby a hodiny.",
       },
       {
         title: "Skóre s důvody a AI shrnutím",
@@ -75,6 +75,9 @@ export const projects: Project[] = [
       "Motion",
       "Vitest",
       "Vercel",
+      "Vercel Blob",
+      "Python",
+      "GitHub Actions",
     ],
     image: {
       src: "/assets/projects/nadhled-v3.webp",
