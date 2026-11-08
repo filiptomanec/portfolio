@@ -80,7 +80,7 @@ export const projects: Project[] = [
       "GitHub Actions",
     ],
     image: {
-      src: "/assets/projects/nadhled-v3.webp",
+      src: "/assets/projects/nadhled-v4.webp",
       alt: "Aplikace Nadhled nad leteckou mapou Hlučína. Vlevo je karta místa se skóre 85 ze 100 a hodnocením „Výborné místo k bydlení“. Otevřená záložka Dostupnost zobrazuje režim Pěšky a zóny dostupnosti za 5, 10 a 15 minut. V mapě jsou kolem špendlíku na náměstí vyznačené fialové zóny.",
     },
     links: {
@@ -88,7 +88,7 @@ export const projects: Project[] = [
     },
     mobile: {
       image: {
-        src: "/assets/projects/nadhled-ios-1-1.webp",
+        src: "/assets/projects/nadhled-ios-1-2.webp",
         alt: "Mobilní aplikace Nadhled na iPhonu. V letecké mapě Hlučína jsou barevné body vybavenosti, pod ní karta místa se skóre 85, tlačítkem pro uložení místa a otevřenou záložkou Vybavenost se seznamem škol, školek, obchodů a lékařů včetně vzdálenosti pěšky.",
       },
       appStore: "https://apps.apple.com/cz/app/nadhled/id6827641875",
