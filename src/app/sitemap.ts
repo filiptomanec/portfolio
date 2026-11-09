@@ -1,36 +1,22 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const page = (
+    path: string,
+    changeFrequency: "monthly" | "yearly",
+    priority: number,
+  ): MetadataRoute.Sitemap[number] => ({
+    url: `${SITE_URL}${path}`,
+    lastModified: new Date(),
+    changeFrequency,
+    priority,
+  });
   return [
-    {
-      url: "https://filiptomanec.cz",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 1,
-    },
-    {
-      url: "https://filiptomanec.cz/services",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.8,
-    },
-    {
-      url: "https://filiptomanec.cz/projects",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://filiptomanec.cz/contact",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.7,
-    },
-    {
-      url: "https://filiptomanec.cz/resume",
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.5,
-    },
+    page("", "yearly", 1),
+    page("/services", "yearly", 0.8),
+    page("/projects", "monthly", 0.8),
+    page("/contact", "yearly", 0.7),
+    page("/resume", "yearly", 0.5),
   ];
 }

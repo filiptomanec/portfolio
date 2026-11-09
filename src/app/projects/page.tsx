@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Projekty | Filip Tomanec",
   description:
     "Projekty Filipa Tomance: vlastní webové aplikace, interaktivní 3D modely a práce s daty. Prohlédněte si živé ukázky i zdrojový kód na GitHubu.",
+  alternates: { canonical: "/projects" },
 };
 
 export default function ProjectsPage() {
